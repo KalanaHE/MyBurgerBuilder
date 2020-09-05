@@ -13,7 +13,7 @@ const BuildControl = (props) => {
         Less
       </Button>
       &nbsp;
-      <Button variant="contained" color="primary">
+      <Button variant="contained" color="primary" onClick={props.added}>
         More
       </Button>
     </div>
