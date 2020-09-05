@@ -1,6 +1,7 @@
 import React from "react";
 import BuildControl from "./BuildControl";
 import "./style.css";
+import Typography from "@material-ui/core/Typography";
 
 const controls = [
   { label: "Salad", type: "salad" },
@@ -12,6 +13,9 @@ const controls = [
 const BuildControls = (props) => {
   return (
     <div className="BuildControls">
+      <Typography variant="h6" gutterBottom>
+        Estimated Price: <strong>{props.price.toFixed(2)} LKR</strong>
+      </Typography>
       {controls.map((ctrl) => (
         <BuildControl
           key={ctrl.label}

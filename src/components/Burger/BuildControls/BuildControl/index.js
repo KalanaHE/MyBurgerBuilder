@@ -21,6 +21,7 @@ const BuildControl = (props) => {
       <Button variant="contained" color="primary" onClick={props.added}>
         More
       </Button>
+      <hr />
     </div>
   );
 };
