@@ -9,7 +9,12 @@ const BuildControl = (props) => {
       <Typography variant="button" display="block" gutterBottom>
         {props.label}
       </Typography>
-      <Button variant="contained" color="secondary">
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={props.deleted}
+        disabled={props.disabled}
+      >
         Less
       </Button>
       &nbsp;
