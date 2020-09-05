@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 
 const BuildControl = (props) => {
   return (
-    <div className="BuildControl">
+    <div /*className="BuildControl"*/>
       <Typography variant="button" display="block" gutterBottom>
         {props.label}
       </Typography>

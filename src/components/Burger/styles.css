@@ -1,8 +1,8 @@
 .Burger {
     width: 100%;
     margin: auto;
-    height: 350px;
-    overflow: scroll;
+    height: 100%;
+    overflow: auto;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;

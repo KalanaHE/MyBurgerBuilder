@@ -3,6 +3,8 @@ import Aux from "../../hoc/Auxx";
 
 import Burger from "../../components/Burger";
 import BuildControls from "../../components/Burger/BuildControls";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
 
 const INGREDIENT_PRICES = {
   salad: 1.0,
@@ -80,14 +82,24 @@ class BurgerBuilder extends Component {
 
     return (
       <Aux>
-        <Burger ingredients={this.state.ingredients} />
-        <BuildControls
-          ingredientRemoved={this.deleteIngredientHandler}
-          ingredientAdded={this.addIngredientHandler}
-          disabled={disabledInfo}
-          price={this.state.totalPrice}
-          purchasable={this.state.purchasable}
-        />
+        <Grid container spacing={3}>
+          <Grid item xs={8}>
+            <Paper style={{ height: "100%" }}>
+              <Burger ingredients={this.state.ingredients} />
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper style={{ height: "100%" }}>
+              <BuildControls
+                ingredientRemoved={this.deleteIngredientHandler}
+                ingredientAdded={this.addIngredientHandler}
+                disabled={disabledInfo}
+                price={this.state.totalPrice}
+                purchasable={this.state.purchasable}
+              />
+            </Paper>
+          </Grid>
+        </Grid>
       </Aux>
     );
   }

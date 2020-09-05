@@ -5,7 +5,7 @@ import { Container } from "@material-ui/core";
 const Layout = (props) => (
   <Aux>
     <div>toolbar , side drawer , backdrop</div>
-    <Container maxWidth="sm">
+    <Container maxWidth="lg">
       <main>{props.children}</main>
     </Container>
   </Aux>
