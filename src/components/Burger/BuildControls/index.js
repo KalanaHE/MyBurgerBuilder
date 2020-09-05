@@ -2,6 +2,8 @@ import React from "react";
 import BuildControl from "./BuildControl";
 import "./style.css";
 import Typography from "@material-ui/core/Typography";
+import { Button } from "@material-ui/core";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 const controls = [
   { label: "Salad", type: "salad" },
@@ -26,6 +28,14 @@ const BuildControls = (props) => {
           disabled={props.disabled[ctrl.type]}
         />
       ))}
+      <Button
+        disabled={!props.purchasable}
+        variant="contained"
+        onClick={props.purchase}
+        startIcon={<ShoppingCartIcon />}
+      >
+        ORDER NOW
+      </Button>
     </div>
   );
 };
