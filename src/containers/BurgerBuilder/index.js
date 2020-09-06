@@ -26,6 +26,7 @@ class BurgerBuilder extends Component {
     },
     totalPrice: 4,
     purchasable: false,
+    purchasing: false,
   };
 
   updatePurchaseState = (ingredients) => {
@@ -74,6 +75,10 @@ class BurgerBuilder extends Component {
     }
   };
 
+  purchaseHandler = () => {
+    this.setState({ purchasing: true });
+  };
+
   render() {
     const disabledInfo = {
       ...this.state.ingredients,
@@ -85,9 +90,11 @@ class BurgerBuilder extends Component {
 
     return (
       <Aux>
-        <Modal>
-          <OrderSummary ingredients={this.state.ingredients} />
-        </Modal>
+        {this.state.purchasing ? (
+          <Modal status={this.state.purchasing}>
+            <OrderSummary ingredients={this.state.ingredients} />
+          </Modal>
+        ) : null}
         <Grid container spacing={3}>
           <Grid item xs={8}>
             <Paper style={{ height: "100%" }}>
@@ -102,6 +109,7 @@ class BurgerBuilder extends Component {
                 disabled={disabledInfo}
                 price={this.state.totalPrice}
                 purchasable={this.state.purchasable}
+                ordered={this.purchaseHandler}
               />
             </Paper>
           </Grid>

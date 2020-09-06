@@ -31,8 +31,8 @@ const BuildControls = (props) => {
       <Button
         disabled={!props.purchasable}
         variant="contained"
-        onClick={props.purchase}
         startIcon={<ShoppingCartIcon />}
+        onClick={props.ordered}
       >
         ORDER NOW
       </Button>
