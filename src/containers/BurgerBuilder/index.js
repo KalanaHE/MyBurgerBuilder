@@ -79,6 +79,10 @@ class BurgerBuilder extends Component {
     this.setState({ purchasing: true });
   };
 
+  purchaseCanselHandler = () => {
+    this.setState({ purchasing: false });
+  };
+
   render() {
     const disabledInfo = {
       ...this.state.ingredients,
@@ -91,7 +95,10 @@ class BurgerBuilder extends Component {
     return (
       <Aux>
         {this.state.purchasing ? (
-          <Modal status={this.state.purchasing}>
+          <Modal
+            status={this.state.purchasing}
+            modelClosed={this.purchaseCanselHandler}
+          >
             <OrderSummary ingredients={this.state.ingredients} />
           </Modal>
         ) : null}
