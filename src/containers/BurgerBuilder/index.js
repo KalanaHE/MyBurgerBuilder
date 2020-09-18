@@ -99,7 +99,10 @@ class BurgerBuilder extends Component {
             status={this.state.purchasing}
             modelClosed={this.purchaseCanselHandler}
           >
-            <OrderSummary ingredients={this.state.ingredients} />
+            <OrderSummary
+              ingredients={this.state.ingredients}
+              cancelpurchase={this.purchaseCanselHandler}
+            />
           </Modal>
         ) : null}
         <Grid container spacing={3}>

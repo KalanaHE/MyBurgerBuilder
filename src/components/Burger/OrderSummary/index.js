@@ -19,7 +19,11 @@ const OrderSummary = (props) => {
       <ul>{ingredientsSummary}</ul>
       <p>Continue to checkout?</p>
       <hr />
-      <Button btnColor="secondary" btnName="Cancel" />{" "}
+      <Button
+        btnColor="secondary"
+        clicked={props.cancelpurchase}
+        btnName="Cancel"
+      />
       <Button btnColor="primary" btnName="Continue" />
     </Aux>
   );
